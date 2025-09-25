@@ -25,11 +25,12 @@
   <body>
     <nav class="nav" aria-label="Основная навигация">
       <div class="container nav__inner">
-        <a class="nav__brand" href="#top" aria-label="На главную">Хомутов</a>
+        <a class="nav__brand" href="#top" aria-label="На главную">Резюме</a>
         <ul class="nav__links">
           <li><a href="#contacts">Контакты</a></li>
           <li><a href="#languages">Языки</a></li>
           <li><a href="#skills">Навыки</a></li>
+          <li><a href="#projects">Проекты</a></li>
           <li><a href="#education">Образование</a></li>
           <li><a href="#experience">Опыт</a></li>
           <li><a href="#about">О себе</a></li>
@@ -41,6 +42,10 @@
     </nav>
     <header class="header">
       <div class="container">
+        <div class="avatar" aria-label="Фото профиля">
+          <img id="avatar-img" alt="Фото профиля" src="./images/resume_photo.jpg" />
+          <input id="avatar-input" type="file" accept="image/*" hidden />
+        </div>
         <h1>Хомутов Андрей Алексеевич</h1>
         <p class="subtitle">Фронтенд-разработчик</p>
         <p class="location">
@@ -67,6 +72,62 @@
         </ul>
         <p>Гражданство: РФ</p>
         <p>Занятость: Полная занятость, полный день</p>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects" aria-label="Проекты">
+      <div class="container">
+        <h2>Проекты</h2>
+        <div class="projects-grid">
+          <article class="project-card" data-project="proj1">
+            <div class="project-media">
+              <button class="arrow left" aria-label="Предыдущий слайд"><i class="fas fa-chevron-left"></i></button>
+              <img alt="Скриншот проекта 1" />
+              <button class="arrow right" aria-label="Следующий слайд"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="project-info">
+              <h3>Проект 1</h3>
+              <p>Короткое описание проекта</p>
+              <a class="project-link" target="_blank" rel="noopener">Открыть на GitHub</a>
+            </div>
+          </article>
+          <article class="project-card" data-project="proj2">
+            <div class="project-media">
+              <button class="arrow left" aria-label="Предыдущий слайд"><i class="fas fa-chevron-left"></i></button>
+              <img alt="Скриншот проекта 2" />
+              <button class="arrow right" aria-label="Следующий слайд"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="project-info">
+              <h3>Проект 2</h3>
+              <p>Короткое описание проекта</p>
+              <a class="project-link" target="_blank" rel="noopener">Открыть на GitHub</a>
+            </div>
+          </article>
+          <article class="project-card" data-project="proj3">
+            <div class="project-media">
+              <button class="arrow left" aria-label="Предыдущий слайд"><i class="fas fa-chevron-left"></i></button>
+              <img alt="Скриншот проекта 3" />
+              <button class="arrow right" aria-label="Следующий слайд"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="project-info">
+              <h3>Проект 3</h3>
+              <p>Короткое описание проекта</p>
+              <a class="project-link" target="_blank" rel="noopener">Открыть на GitHub</a>
+            </div>
+          </article>
+          <article class="project-card" data-project="proj4">
+            <div class="project-media">
+              <button class="arrow left" aria-label="Предыдущий слайд"><i class="fas fa-chevron-left"></i></button>
+              <img alt="Скриншот проекта 4" />
+              <button class="arrow right" aria-label="Следующий слайд"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="project-info">
+              <h3>Проект 4</h3>
+              <p>Короткое описание проекта</p>
+              <a class="project-link" target="_blank" rel="noopener">Открыть на GitHub</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 

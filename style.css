@@ -68,6 +68,23 @@ h1, h2 {
     font-size: 1rem;
 }
 
+/* --- Avatar --- */
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.avatar img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.25);
+}
+
 /* --- Секции --- */
 .section {
     padding: 60px 0;
@@ -135,6 +152,83 @@ a:hover {
     cursor: default;
 }
 
+/* --- Проекты --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--card);
+    box-shadow: var(--shadow);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+.project-media {
+    position: relative;
+    aspect-ratio: 16/9;
+    background: #0b1220;
+    display: grid;
+    place-items: center;
+}
+
+.project-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s ease;
+}
+
+.project-card:hover .project-media img {
+    transform: scale(1.04);
+}
+
+.project-media .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.project-media .arrow.left { left: 10px; }
+.project-media .arrow.right { right: 10px; }
+
+.project-info {
+    padding: 14px 16px 16px;
+}
+
+.project-info h3 {
+    margin-bottom: 6px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .skills ul li:hover {
     background-color: #4a90e2;
     color: #fff;
@@ -171,24 +265,35 @@ a:hover {
 .nav__inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
     padding: 10px 0;
 }
 
 .nav__brand {
     font-weight: 700;
     color: var(--heading);
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
 }
 
 .nav__links {
     list-style: none;
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 14px;
 }
 
 .nav__links a {
-    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 10px;
     border-radius: 8px;
+    line-height: 1;
+    margin-top: 3px;
 }
 
 .nav__links a.active, .nav__links a:hover {
@@ -200,7 +305,10 @@ a:hover {
     background: transparent;
     color: var(--text);
     border-radius: 10px;
-    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 10px;
     cursor: pointer;
 }
 
