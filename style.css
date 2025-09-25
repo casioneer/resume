@@ -1,0 +1,221 @@
+/* --- CSS variables (light/dark) --- */
+:root {
+    --bg: #f9f9f9;
+    --text: #333;
+    --heading: #222;
+    --primary: #4a90e2;
+    --accent: #9013fe;
+    --card: #fff;
+    --shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+[data-theme="dark"] {
+    --bg: #0f1220;
+    --text: #e8e8ef;
+    --heading: #ffffff;
+    --primary: #6aa8ff;
+    --accent: #b07bff;
+    --card: #171a2b;
+    --shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* --- Общие стили --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--bg);
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2 {
+    color: var(--heading);
+}
+
+/* --- Хедер --- */
+.header {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.header p {
+    margin: 3px 0;
+    font-size: 1rem;
+}
+
+/* --- Секции --- */
+.section {
+    padding: 60px 0;
+    background-color: var(--card);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.section:hover {
+    transform: translateY(-5px);
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4a90e2;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* --- Контакты и списки --- */
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+ul li i {
+    color: #4a90e2;
+    margin-right: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+/* --- Навыки --- */
+.skills ul li {
+    display: inline-block;
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 25px;
+    margin: 5px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skills ul li:hover {
+    background-color: #4a90e2;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* --- О себе --- */
+.about p {
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* --- Футер --- */
+.footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+/* --- Навигация --- */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: saturate(1.1) blur(6px);
+    background: color-mix(in srgb, var(--bg) 70%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
+}
+
+.nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.nav__brand {
+    font-weight: 700;
+    color: var(--heading);
+}
+
+.nav__links {
+    list-style: none;
+    display: flex;
+    gap: 14px;
+}
+
+.nav__links a {
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.nav__links a.active, .nav__links a:hover {
+    background: color-mix(in srgb, var(--primary) 14%, transparent);
+}
+
+.theme-toggle {
+    border: 1px solid color-mix(in srgb, var(--text) 18%, transparent);
+    background: transparent;
+    color: var(--text);
+    border-radius: 10px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+/* --- Адаптивность --- */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .skills ul li {
+        padding: 6px 12px;
+        margin: 3px;
+    }
+}
