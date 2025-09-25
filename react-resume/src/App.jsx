@@ -3,30 +3,31 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 const THEME_KEY = 'theme'
 const AVATAR_KEY = 'avatar-data-url'
 
+const base = import.meta.env.BASE_URL || '/';
 const PROJECTS = {
   proj1: {
     title: 'Дипломный проект: онлайн‑пиццерия (PERN)',
     desc: 'Полноценный веб‑сервис на PERN: регистрация и вход, корзина, оформление заказов. В dev‑режиме есть безопасная симуляция оплаты Stripe.',
     link: 'https://github.com/casioneer/diploma_RIS',
-    images: ['images/diploma-1.jpg','images/diploma-2.jpg','images/diploma-3.jpg']
+    images: [`${base}images/diploma-1.jpg`,`${base}images/diploma-2.jpg`,`${base}images/diploma-3.jpg`]
   },
   proj2: {
     title: 'Mesto на React',
     desc: 'Небольшое приложение с карточками и профилем: редактирование, лайки, модальные окна. Уделял внимание чистоте UI и адаптивности.',
     link: 'https://github.com/casioneer/mesto-project',
-    images: ['images/mesto-1.jpg','images/mesto-2.jpg','images/mesto-3.jpg']
+    images: [`${base}images/mesto-1.jpg`,`${base}images/mesto-2.jpg`,`${base}images/mesto-3.jpg`]
   },
   proj3: {
     title: 'Путешествия по России',
     desc: 'Адаптивный лендинг о поездках по стране. Ставка на аккуратную вёрстку, сетки и типографику.',
     link: 'https://github.com/casioneer/russian-travel',
-    images: ['images/travel-1.jpg','images/travel-2.jpg','images/travel-3.jpg']
+    images: [`${base}images/travel-1.jpg`,`${base}images/travel-2.jpg`,`${base}images/travel-3.jpg`]
   },
   proj4: {
     title: 'Производственная практика',
     desc: 'Опыт командной разработки: планирование задач, разбор требований и реализация фронтенд‑функционала на JavaScript.',
     link: 'https://github.com/casioneer/industrial-internship',
-    images: ['images/intern-1.jpg','images/intern-2.jpg','images/intern-3.jpg']
+    images: [`${base}images/intern-1.jpg`,`${base}images/intern-2.jpg`,`${base}images/intern-3.jpg`]
   },
 }
 
@@ -116,7 +117,7 @@ function Nav() {
 
 function Header() {
   const inputRef = useRef(null)
-  const [src, setSrc] = useState('images/resume_photo.jpg')
+  const [src, setSrc] = useState(`${base}images/resume_photo.jpg`)
   useEffect(()=>{ const saved = localStorage.getItem(AVATAR_KEY); if (saved) setSrc(saved) },[])
   const onChange = (e) => {
     const file = e.target.files && e.target.files[0]
